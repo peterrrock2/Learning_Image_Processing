@@ -73,8 +73,5 @@ def make_padd_array(array, filter_dimension, type):
         
     return padd_array
 
-def NormalizeData(data):
-    return (data - np.min(data)) / (np.max(data) - np.min(data))
-
 if __name__ == "__main__":
     main()
