@@ -9,6 +9,8 @@ NewImage = imfilter(I2, Filter, 'replicate');
 
 %create image with half the pixels
 DownImage = NewImage(1:2:end, 1:2:end);
+imwrite(DownImage, "downBuilding.jpg")
+
 
 ZeroMatrix = reshape(1:rows*columns, rows, columns).*0;
 
@@ -21,6 +23,7 @@ end
 
 Filter2 = [0.25,0.5,0.25;0.5,1,0.5;0.25,0.5,0.25];
 PaddNewImage = imfilter(ZeroMatrix, Filter2);
+imwrite(PaddNewImage, "updownBuilding.jpg")
 
 mse = sum(sum(power(I2-PaddNewImage,2)))/(rows*columns);
 
